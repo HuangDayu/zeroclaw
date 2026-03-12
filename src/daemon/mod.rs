@@ -433,6 +433,7 @@ mod tests {
             draft_update_interval_ms: 1000,
             interrupt_on_new_message: false,
             mention_only: false,
+            proxy_url: None,
         });
         assert!(has_supervised_channels(&config));
     }
@@ -444,6 +445,7 @@ mod tests {
             client_id: "client_id".into(),
             client_secret: "client_secret".into(),
             allowed_users: vec!["*".into()],
+            proxy_url: None,
         });
         assert!(has_supervised_channels(&config));
     }
@@ -458,6 +460,7 @@ mod tests {
             allowed_users: vec!["*".into()],
             thread_replies: Some(true),
             mention_only: Some(false),
+            proxy_url: None,
         });
         assert!(has_supervised_channels(&config));
     }
@@ -469,6 +472,7 @@ mod tests {
             app_id: "app-id".into(),
             app_secret: "app-secret".into(),
             allowed_users: vec!["*".into()],
+            proxy_url: None,
         });
         assert!(has_supervised_channels(&config));
     }
@@ -481,6 +485,7 @@ mod tests {
             app_token: "app-token".into(),
             webhook_secret: None,
             allowed_users: vec!["*".into()],
+            proxy_url: None,
         });
         assert!(has_supervised_channels(&config));
     }
@@ -565,6 +570,7 @@ mod tests {
             draft_update_interval_ms: 1000,
             interrupt_on_new_message: false,
             mention_only: false,
+            proxy_url: None,
         });
 
         let target = heartbeat_delivery_target(&config).unwrap();
