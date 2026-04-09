@@ -246,7 +246,7 @@ jobs:
           if [ -n "${{ matrix.linker_env || '' }}" ] && [ -n "${{ matrix.linker || '' }}" ]; then
             export "${{ matrix.linker_env }}=${{ matrix.linker }}"
           fi
-          cargo build --release --locked --features "${{ env.RELEASE_CARGO_FEATURES }}" --target ${{ matrix.target }}
+          cargo build --release --all --locked --all-features --target ${{ matrix.target }}
 
       - name: Check binary size
         shell: bash
